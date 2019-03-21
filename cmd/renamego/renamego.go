@@ -34,7 +34,7 @@ func main() {
 		fileName := filepath.Base(path)
 		newFileName := fileName
 
-		r := regexp.MustCompile(`[\s,:-]+`)
+		r := regexp.MustCompile(`[\s,，︰:–!-]+`)
 		newFileName = r.ReplaceAllString(fileName, "_")
 
 		for strings.Index(newFileName, "__") >= 0 {
@@ -55,4 +55,4 @@ func main() {
 
 }
 
-// GOBIN=$GOPATH/bin go install cmd/namego.go
+// GOBIN=$GOPATH/bin go install cmd/renamego.go
